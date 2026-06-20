@@ -460,4 +460,6 @@ return module
 
 --[[ This module is the head and the necessity of my project, without it, nothing works since it provides all the core functions, I hoped to provide
 -- something else to provide a more broad example of the overall code in my project but this was the only cohesive 200+ lines piece of code I could
-find ]]
+find
+
+Also, for the record, I use behavior trees for the npc]]

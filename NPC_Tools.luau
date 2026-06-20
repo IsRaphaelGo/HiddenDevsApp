@@ -213,7 +213,7 @@ function module.Check_Visibility(NPC_Info: Npc_Types.Npc_Info, Target: Player)
 
 	local ModelHRP = Model.HumanoidRootPart
 
-	for _, Eye in pairs(Model.Head.Eyes:GetChildren()) do
+	for _, Eye in pairs(Model.Head.Eyes:GetChildren()) do -- This allows for actual functionality to the eyes, instead of using the head as a fixed anchor to check the player's position I use the eyes
 		Eye = Eye :: typeof(Model.Head.Eyes.EyeL) -- Just for the types
 		local Ocular = Eye.Ocular
 

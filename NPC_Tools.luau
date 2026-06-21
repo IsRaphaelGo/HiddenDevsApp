@@ -23,7 +23,7 @@ local Visual_Raycast_Properties = {
 }
 
 local Eye_Movement_Settings = {
-	Max_Studs_Movement = 0.035, -- Default studs movement for the eyes
+	Max_Studs_Movement = 0.035, -- Default studs movement for the oculars
 	ShrinkLimiter = 0.55, -- How close the ocular can be to the edge of the eye, 1 being on the edge, 0 being in the middle of the eye
 }
 

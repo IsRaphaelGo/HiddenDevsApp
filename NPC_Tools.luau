@@ -200,7 +200,7 @@ function module.RayCastToTarget( -- Main raycast function, allows for vector3, p
 	return
 end
 
-function module.Check_Visibility(NPC_Info: Npc_Types.Npc_Info, Target: Player)
+function module.Check_Visibility(NPC_Info: Npc_Types.Npc_Info, Target: Player) -- Cheks if the player is visible to the npc
 	local Player_Character = Target and Target.Character
 	local Player_HRP = Player_Character and Player_Character:FindFirstChild("HumanoidRootPart") :: BasePart
 

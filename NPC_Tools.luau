@@ -440,9 +440,9 @@ function module.MoveOculars(Obj: Obj, Target: Vector3)
 		end
 
 		local ClampUnitX, ClampUnitY = math.clamp(UnitX, -XLimit, XLimit), math.clamp(UnitY, -YLimit, YLimit) -- Clamped values, so the oculars don't go overboard and look weird or clip outisde of the iris(in this case the eye)
-		local _OverboardX = XLimit - UnitX --head movement, if negative then there's overboard
-		local _OverboardY = YLimit - UnitY --head movement, if negative then there's overboard
-		--The overboards are in case I want to add head movement, calculates whether there's overboard movement if it's a negative, and if so, it says how much
+		local _OverboardX = XLimit - UnitX --head movement
+		local _OverboardY = YLimit - UnitY --head movement
+		--The overboards are in case I want to add head movement, calculates whether there's overboard movement
 
 		local ClampedCFrame = CFrame.new(Vector3.new(ClampUnitX, ClampUnitY, 0)) -- Final result, must be used with a weld, since they're the perfect fit for this
 		-- Tween the weld with the new CFrame, looks better

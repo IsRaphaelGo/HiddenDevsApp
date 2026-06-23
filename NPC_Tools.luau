@@ -169,8 +169,10 @@ function module.RayCastToTarget( -- Main raycast function, allows for vector3, p
 
 		return HitPosition :: Vector3?, RayResult :: RaycastResult?
 	elseif typeof(Target) == "table" then -- Return the first part that is hit in the table, useful for characters
-		for i, Part in Target do
-			if typeof(Part) == "Instance" and Part:IsA("BasePart") then
+		for i, Part: Instance in Target do
+			local Character = Part and Part.Parent -- should improve compatibility
+
+			if typeof(Part) == "Instance" and Part:IsA("BasePart") and Character then
 				local Difference = (Part.Position - Origin.Position)
 				local RayResult: RaycastResult?
 				local HitPosition: Vector3?
@@ -184,7 +186,7 @@ function module.RayCastToTarget( -- Main raycast function, allows for vector3, p
 					)
 				end
 
-				if RayResult then
+				if RayResult and RayResult.Instance:IsDescendantOf(Character) then
 					HitPosition = RayResult.Position
 
 					return HitPosition :: Vector3, RayResult :: RaycastResult
